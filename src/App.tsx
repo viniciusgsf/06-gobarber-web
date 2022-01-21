@@ -1,26 +1,25 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable jsx-a11y/heading-has-content */
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import SignIn from './Pages/Signin';
+import SignUp from './Pages/SignUp';
+import GlobalStyle from '../src/styles/global';
+
+import AppProvider from './hooks';
+
+import Routes from './routes';
+
+
+const App: React.FC = () => (
+  <Router>
+    <AppProvider> 
+      <Routes/>
+    </AppProvider>  
+
+    <GlobalStyle/>
+  </Router>
+);
 
 export default App;
